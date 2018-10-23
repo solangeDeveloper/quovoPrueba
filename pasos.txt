@@ -1,0 +1,66 @@
+docker-compose down
+docker rmi prueba_api
+docker-compose up -d
+docker exec -it container-api sh
+sudo chmod -R 777 app
+
+
+{#226
+  +"access_token": {#228
+    +"token": "23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+    +"expires": "2018-10-23T15:35:16Z"
+    +"name": "user4"
+    +"created": "2018-10-23T14:35:18Z"
+  }
+}
+
+{#223
+  +"user": {#221
+    +"username": "user4"
+    +"name": null
+    +"value": null
+    +"id": 7025721
+    +"email": null
+  }
+}
+
+
+{#224
+  +"connection": {#222
+    +"username": "user4"
+    +"status": null
+    +"user_id": 7025721
+    +"created": "2018-10-23T13:26:21Z"
+    +"last_good_sync": null
+    +"is_disabled": false
+    +"institution_name": "E*TRADE"
+    +"value": null
+    +"last_sync": "2018-10-23T13:26:21Z"
+    +"institution_id": 1
+    +"auto_updates": true
+    +"config_instructions": null
+    +"id": 8635045
+  }
+}
+
+
+{#232
+  +"sync": {#226
+    +"status": "syncing"
+    +"progress": {#228
+      +"state": "queued"
+      +"percent": 0.0
+      +"message": "queued"
+    }
+    +"connection_id": 8635045
+  }
+}
+
+
+{#232
+  +"sync": {#230
+    +"status": "incorrect_credentials"
+    +"progress": null
+    +"connection_id": 8635045
+  }
+}
