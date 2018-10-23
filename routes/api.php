@@ -24,6 +24,10 @@ Route::get('/listarconexion','quovoController@listarConexion');
 Route::get('/sincroncompleta','quovoController@sincronCompleta');
 Route::get('/verifsincron','quovoController@verfSincroniz');
 Route::get('/sincronrapida','quovoController@sincronRapida');
+Route::get('/consultcuenta','quovoController@consultCuenta');
+
+
+
 
 
 

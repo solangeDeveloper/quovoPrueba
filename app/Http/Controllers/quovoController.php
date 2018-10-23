@@ -33,7 +33,7 @@ class quovoController extends Controller
             'https://api.quovo.com/v3/users',
             ['headers' => 
                 [
-                    'Authorization' => "Bearer 23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
                 ],
                 'form_params' => [
                     'username' => 'user4'
@@ -50,10 +50,10 @@ class quovoController extends Controller
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'POST',
-            'https://api.quovo.com/v3/users/7027249/connections',
+            'https://api.quovo.com/v3/users/7029577/connections',
             ['headers' => 
                 [
-                    'Authorization' => "Bearer 23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
                 ],
                 'form_params' => [
                     'institution_id' => '1'
@@ -69,10 +69,10 @@ class quovoController extends Controller
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'GET',
-            'https://api.quovo.com/v3/connections/8635045',
+            'https://api.quovo.com/v3/connections/8638752',
             ['headers' => 
                 [
-                    'Authorization' => "Bearer 23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
                 ],
             ]
         )->getBody()->getContents();
@@ -85,10 +85,10 @@ class quovoController extends Controller
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'POST',
-            'https://api.quovo.com/v3/connections/8635045/sync',
+            'https://api.quovo.com/v3/connections/8638752/sync',
             ['headers' => 
                 [
-                    'Authorization' => "Bearer 23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
                 ],
                 'form_params' => [
                     'username' => 'user4',
@@ -105,10 +105,10 @@ class quovoController extends Controller
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'GET',
-            'https://api.quovo.com/v3/connections/8635045',
+            'https://api.quovo.com/v3/connections/8638752',
             ['headers' => 
                 [
-                    'Authorization' => "Bearer 23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
                 ],
             ]
         )->getBody()->getContents();
@@ -120,14 +120,29 @@ class quovoController extends Controller
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'POST',
-            'https://api.quovo.com/v3/connections/8635045/sync',
+            'https://api.quovo.com/v3/connections/8638752/sync',
             ['headers' => 
                 [
-                    'Authorization' => "Bearer 23b5163ff8e49844f7a4e654da9ec475e0aaaa72f7eb42ceecbc7fc92273861f"
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
                 ],
                 'form_params' => [
                     'type' => 'auth'
                 ]
+            ]
+        )->getBody()->getContents();
+        $data = json_decode($newresponse);
+        dd($data);
+    }
+
+    function consultCuenta(){
+        $client = new \GuzzleHttp\Client();
+        $newresponse = $client->request(
+            'GET',
+            'https://api.quovo.com/v3/accounts',
+            ['headers' => 
+                [
+                    'Authorization' => "Bearer 52d4570fed6f922257a153e03123a35e24db46859d92bbab45a2d76c652fde27"
+                ],
             ]
         )->getBody()->getContents();
         $data = json_decode($newresponse);
