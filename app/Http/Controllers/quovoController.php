@@ -1,20 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use GuzzleHttp\Client;
 
 use Illuminate\Http\Request;
 
 class quovoController extends Controller
 {
-    function crearToken(){
+    public function crearToken()
+    {
         $client = new \GuzzleHttp\Client(["base_uri"=>"https://api.quovo.com/v3/tokens"]);
         $response = $client->post(
             'tokens',
             [
-                'auth' => [ 
-                    "carla.ramirez.rojas@gmail.com", 
-                    '$Carla2015' 
+                'auth' => [
+                    "carla.ramirez.rojas@gmail.com",
+                    '$Carla2015'
                 ],
                 'form_params' => [
                     'name' => 'user9'
@@ -26,12 +28,13 @@ class quovoController extends Controller
     }
     
     /* param token */
-    function crearUsuario(){        
+    public function crearUsuario()
+    {
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'POST',
             'https://api.quovo.com/v3/users',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer d80eb4be3fca5cba7719d41708b7c0980bd1856df7ce64374018b794cf4ae53e"
                 ],
@@ -51,7 +54,7 @@ class quovoController extends Controller
         $newresponse = $client->request(
             'PUT',
             'https://api.quovo.com/v3/users/7056612/terms_of_use',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer d80eb4be3fca5cba7719d41708b7c0980bd1856df7ce64374018b794cf4ae53e"
                 ],
@@ -64,14 +67,14 @@ class quovoController extends Controller
         dd($data);
     }*/
 
-     /** param user_id */
-     function crearConexion(){
-        
+    /** param user_id */
+    public function crearConexion()
+    {
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'POST',
             'https://api.quovo.com/v3/users/7057215/connections',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer d80eb4be3fca5cba7719d41708b7c0980bd1856df7ce64374018b794cf4ae53e"
                 ],
@@ -85,12 +88,13 @@ class quovoController extends Controller
     }
 
     /* param connection_id */
-    function sincronCompleta(){
+    public function sincronCompleta()
+    {
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'POST',
             'https://api.quovo.com/v3/connections/8665128/sync',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer d80eb4be3fca5cba7719d41708b7c0980bd1856df7ce64374018b794cf4ae53e"
                 ],
@@ -105,12 +109,13 @@ class quovoController extends Controller
     }
 
 
-    function getAccountUser(){
+    public function getAccountUser()
+    {
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/users/7057215/accounts',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer d80eb4be3fca5cba7719d41708b7c0980bd1856df7ce64374018b794cf4ae53e"
                 ],
@@ -121,12 +126,13 @@ class quovoController extends Controller
     }
 
 
-    function getDataAccount(){
+    public function getDataAccount()
+    {
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/accounts/17052869/auth',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer d80eb4be3fca5cba7719d41708b7c0980bd1856df7ce64374018b794cf4ae53e"
                 ],
@@ -141,7 +147,7 @@ class quovoController extends Controller
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/connections/8660297/accounts',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer 844f48482e0146c86fa5a473b5db71a8643b0b360eda356b063ed5e19894ca12"
                 ],
@@ -161,12 +167,12 @@ class quovoController extends Controller
 
 
     /** paramd id de conexion */
-    /*function listarConexion(){        
+    /*function listarConexion(){
         $client = new \GuzzleHttp\Client();
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/connections/8657911',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer c288e5086dda4dadb78846e55616e432ac8bd169527c8cbf44db6735ad85c7f3"
                 ],
@@ -182,7 +188,7 @@ class quovoController extends Controller
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/connections/8657911',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer c288e5086dda4dadb78846e55616e432ac8bd169527c8cbf44db6735ad85c7f3"
                 ],
@@ -198,7 +204,7 @@ class quovoController extends Controller
             // 'POST'
             'GET',
             'https://api.quovo.com/v3/connections/8658292/sync',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer f4e133c2dedfe899da970e84624593e64ce0aeea7820ffac3e8d21f305c1d05e"
                 ],
@@ -216,7 +222,7 @@ class quovoController extends Controller
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/accounts',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer f4e133c2dedfe899da970e84624593e64ce0aeea7820ffac3e8d21f305c1d05e"
                 ],
@@ -231,7 +237,7 @@ class quovoController extends Controller
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/users/7049419/accounts',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer c288e5086dda4dadb78846e55616e432ac8bd169527c8cbf44db6735ad85c7f3"
                 ],
@@ -247,7 +253,7 @@ class quovoController extends Controller
         $newresponse = $client->request(
             'GET',
             'https://api.quovo.com/v3/connections/8658292/accounts',
-            ['headers' => 
+            ['headers' =>
                 [
                     'Authorization' => "Bearer c288e5086dda4dadb78846e55616e432ac8bd169527c8cbf44db6735ad85c7f3"
                 ],
@@ -255,7 +261,6 @@ class quovoController extends Controller
         )->getBody()->getContents();
         $data = json_decode($newresponse);
         dd($data);
-        
-    }*/
 
+    }*/
 }

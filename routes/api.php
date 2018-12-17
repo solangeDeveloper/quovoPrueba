@@ -17,12 +17,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/creartoken','quovoController@crearToken');
-Route::get('/crearusuario','quovoController@crearUsuario');
-Route::get('/crearconexion','quovoController@crearConexion');
-Route::get('/sincroncompleta','quovoController@sincronCompleta');
-Route::get('/consulusercuenta','quovoController@getAccountUser');
-Route::get('/consuldetallecuenta','quovoController@getDataAccount');
+Route::get('/creartoken', 'quovoController@crearToken');
+Route::get('/crearusuario', 'quovoController@crearUsuario');
+Route::get('/crearconexion', 'quovoController@crearConexion');
+Route::get('/sincroncompleta', 'quovoController@sincronCompleta');
+Route::get('/consulusercuenta', 'quovoController@getAccountUser');
+Route::get('/consuldetallecuenta', 'quovoController@getDataAccount');
+
+Route::get('/creating-public-tokens', 'plaidController@plaidAuth');
+
 
 
 
@@ -39,20 +42,3 @@ Route::get('/listarconexion','quovoController@listarConexion');
 Route::get('/verifsincron','quovoController@verfSincroniz');
 Route::get('/sincronrapida','quovoController@sincronRapida');
 Route::get('/consultcuenta','quovoController@consultCuenta');*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
