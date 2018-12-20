@@ -1,0 +1,8 @@
+$Sole-2016  
+
+Buenas Tardes en el ambiente de development una vez que me autentico con un usuario bancario (production) me da el error en el capcha y no puedo pasar a la siguiente pantalla que seria el selector de cuentas. Hay alguna solcuion para esto  
+
+Good afternoon, the process of authentication in the development environment gives me the error "The provided recaptcha token was denied. Please reattempt recaptcha" using a banking user (production) I can not go to the next screen of the account selector. Is there any solution for this ?
+
+
+Good afternoon the returned data from the selected bank could have undefined values?. For example the type of account could come in unknown or undefine

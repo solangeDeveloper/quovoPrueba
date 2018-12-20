@@ -24,7 +24,26 @@ Route::get('/sincroncompleta', 'quovoController@sincronCompleta');
 Route::get('/consulusercuenta', 'quovoController@getAccountUser');
 Route::get('/consuldetallecuenta', 'quovoController@getDataAccount');
 
-Route::get('/creating-public-tokens', 'plaidController@plaidAuth');
+
+Route::get('/getInstitutionbyId', 'plaidController@getInstitutionbyId');
+Route::get('/creating-public-token', 'plaidController@createItemSanbox');
+Route::get('/public_token/exchange', 'plaidController@exchangeToken');
+Route::get('/authenticate', 'plaidController@getAuthenticate');
+
+
+Route::get('/search-institutions', 'plaidController@searchInstitutions');
+Route::get('/test', 'plaidController@createItemDev');
+
+
+
+
+
+
+
+
+
+
+
 
 
 
