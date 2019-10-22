@@ -50,7 +50,7 @@ class plaidController extends Controller
             'headers' => ['Content-type' => 'application/json'],
             'json' => [
                 "client_id"=>"5c12b119736cca0010f4dd52",
-                "secret"=>"2eeccf5041b8cc92fdc9c2fb187312",
+                "secret"=>"reset this on dashboard.plaid.com",
                 "public_token"=>$public_token
             ],
         ]);
